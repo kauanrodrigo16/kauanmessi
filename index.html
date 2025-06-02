@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto Agrinho - Conexão entre Campo e Cidade</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      background-image: url('campoecidade.gif');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #00ffcc;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 300px;
+      max-width: 90%;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .imagem-dupla {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #00ddaa;
+    }
+
+    .explicacao {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .enquete {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 700px;
+      border-radius: 10px;
+      text-align: left;
+      color: #00ffcc;
+    }
+
+    .enquete h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .enquete label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .resultado {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #00ff00;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <section id="agrinho" tabindex="0">
+    <!-- Frase decorada que você pediu para manter no início -->
+    <p style="color: #00ffff; font-weight: bold;">Projeto Agrinho 2025</p>
+
+    <h1>Conexão entre Campo e Cidade</h1>
+
+    <img src="https://agroceres.com.br/wp-content/uploads/2023/04/campo-e-cidade.jpg" alt="Campo e Cidade" />
+
+    <h2>Unindo Saberes, Culturas e Futuro</h2>
+
+    <div class="imagem-dupla">
+      <div>
+        <img src="campo.png" alt="Imagem do Campo" />
+        <p style="color: #00ffff;"></p>
+      </div>
+      <div>
+        <img src="cidade.png" alt="Imagem da Cidade" />
+        <p style="color: #00ffff;"></p>
+      </div>
+    </div>
+
+    <div class="explicacao">
+      <p>&lt;div&gt;: Tag usada para estruturar a página em blocos.</p>
+      <p>O Projeto Agrinho estimula a reflexão sobre o papel do campo e da cidade no desenvolvimento sustentável.</p>
+      <p>CSS Básico:</p>
+      <ul>
+        <li>background-image: define imagem de fundo</li>
+        <li>border-radius: arredonda cantos de elementos</li>
+        <li>color: define a cor do texto</li>
+        <li>padding: espaçamento interno</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Botão para mostrar imagem nova -->
+  <button onclick="mostrarTroca()">Mostrar imagens</button>
+  <br />
+  <img
+    id="imagemTroca"
+    src="troca.png"
+    alt="Imagem de troca"
+    style="display: none; margin-top: 20px;"
+    width="300"
+  />
+
+  <!-- Imagem anterior -->
+  <img src="https://www.sistemafaep.org.br/wp-content/uploads/2021/09/projeto-agrinho-foto.jpg" alt="O campo produz o que a cidade consome; a cidade transforma e distribui o que o campo necessita." width="300" />
+
+  <!-- Novo vídeo educativo -->
+  <h1>Vídeo Educativo</h1>
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/EVkdn9viUO8?si=W4IUAW-owPxdQ2B4" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+
+  <!-- Enquetes formais sobre conexão entre campo e cidade -->
+  <div class="enquete">
+    <h2>Você acredita que a integração entre campo e cidade é fundamental para o desenvolvimento sustentável?</h2>
+    <form id="formEnquete6">
+      <label><input type="radio" name="opcao6" value="Sim, é essencial"> Sim, é essencial</label>
+      <label><input type="radio" name="opcao6" value="Parcialmente importante"> Parcialmente importante</label>
+      <label><input type="radio" name="opcao6" value="Não é tão relevante"> Não é tão relevante</label>
+      <br><br>
+      <button type="button" onclick="enviarResposta('formEnquete6', 'resultado6')">Enviar</button>
+    </form>
+    <div id="resultado6" class="resultado"></div>
+  </div>
+
+  <div class="enquete">
+    <h2>Na sua opinião, qual o principal benefício da relação entre campo e cidade?</h2>
+    <form id="formEnquete7">
+      <label><input type="radio" name="opcao7" value="Abastecimento de alimentos"> Abastecimento de alimentos</label>
+      <label><input type="radio" name="opcao7" value="Geração de empregos"> Geração de empregos</label>
+      <label><input type="radio" name="opcao7" value="Desenvolvimento econômico"> Desenvolvimento econômico</label>
+      <br><br>
+      <button type="button" onclick="enviarResposta('formEnquete7', 'resultado7')">Enviar</button>
+    </form>
+    <div id="resultado7" class="resultado"></div>
+  </div>
+
+  <div class="enquete">
+    <h2>Você considera que a educação pode fortalecer a conexão entre os moradores do campo e da cidade?</h2>
+    <form id="formEnquete8">
+      <label><input type="radio" name="opcao8" value="Sim, muito importante"> Sim, muito importante</label>
+      <label><input type="radio" name="opcao8" value="Importante, mas pouco explorada"> Importante, mas pouco explorada</label>
+      <label><input type="radio" name="opcao8" value="Não acredito"> Não acredito</label>
+      <br><br>
+      <button type="button" onclick="enviarResposta('formEnquete8', 'resultado8')">Enviar</button>
+    </form>
+    <div id="resultado8" class="resultado"></div>
+  </div>
+
+  <div class="enquete">
+    <h2>Você acha que as políticas públicas atuais favorecem a cooperação entre cidade e campo?</h2>
+    <form id="formEnquete9">
+      <label><input type="radio" name="opcao9" value="Sim, estão bem direcionadas"> Sim, estão bem direcionadas</label>
+      <label><input type="radio" name="opcao9" value="Parcialmente"> Parcialmente</label>
+      <label><input type="radio" name="opcao9" value="Não, precisam melhorar"> Não, precisam melhorar</label>
+      <br><br>
+      <button type="button" onclick="enviarResposta('formEnquete9', 'resultado9')">Enviar</button>
+    </form>
+    <div id="resultado9" class="resultado"></div>
+  </div>
+
+  <script>
+    function mostrarTroca() {
+      document.getElementById("imagemTroca").style.display = "block";
+    }
+
+    function enviarResposta(formId, resultadoId) {
+      const form = document.getElementById(formId);
+      const opcoes = form.elements;
+      let selecionado = null;
+      for (let i = 0; i < opcoes.length; i++) {
+        if (opcoes[i].type === "radio" && opcoes[i].checked) {
+          selecionado = opcoes[i].value;
+          break;
+        }
+      }
+      const resultadoDiv = document.getElementById(resultadoId);
+      if (selecionado) {
+        resultadoDiv.innerText = "Você votou: " + selecionado;
+      } else {
+        resultadoDiv.innerText = "Por favor, selecione uma opção.";
+      }
+    }
+  </script>
+</body>
+</html>
